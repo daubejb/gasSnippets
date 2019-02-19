@@ -1,0 +1,32 @@
+{
+  "name": "gassnippets",
+  "version": "1.0.0",
+  "description": "A collection of helpful Google Apps Script Code Snippets",
+  "main": "Code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daubejb/gasSnippets.git"
+  },
+  "keywords": [
+    "Google",
+    "Apps",
+    "Script",
+    "Code",
+    "Snippets"
+  ],
+  "author": "Jeffrey B. Daube",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daubejb/gasSnippets/issues"
+  },
+  "homepage": "https://github.com/daubejb/gasSnippets#readme",
+  "devDependencies": {
+    "@google/clasp": "^2.0.1",
+    "@types/google-apps-script": "0.0.37",
+    "eslint": "^5.14.1",
+    "typescript": "^3.3.3"
+  }
+}

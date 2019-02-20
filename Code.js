@@ -43,3 +43,20 @@ function getDocumentBodyTextById(documentId) {
     var document = DocumentApp.openById(documentId);
     return document.getBody().getText();
 }
+
+/**
+ * Sends an htmlBody email with a noReply setting
+ *
+ * @param {string} subject is the title of the email
+ * @param {string} recipient is who to send the email to
+ * @param {string} htmlBody is the html content of the email to be sent
+ * @param {boolean} noReply is either true or false, true will make email no reply
+ */
+function sendHtmlEmail(subject, recipient, htmlBody, noReply) {
+    MailApp.sendEmail({
+        to: recipient,
+        subject: subject,
+        htmlBody: htmlBody,
+        noReply: noReply
+    });
+}

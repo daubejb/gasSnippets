@@ -1,4 +1,4 @@
-/*
+/**
  * Get the most recent form response object from a Google Form.
  * To learn more about what to do with the formResponse, see:
  * https://developers.google.com/apps-script/reference/forms/form-response
@@ -9,7 +9,7 @@ function getLatestFormResponse() {
     Logger.log(latestFormResponse);
 }
 
-/*
+/**
  * Get request to a basic RESTful API
  * The URL Fetch service can issue HTTP and HTTPS requests and receive repsonses
  * https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app#fetch(String)
@@ -21,7 +21,7 @@ function getRequestToApi() {
 }
 
 
-/*
+/**
  * Responds with true if the date is today and false if the date is not today
  *
  * @param {date} date to compare to today's date
@@ -31,4 +31,15 @@ function isDateToday(date) {
     var today = Utilities.formatDate (new Date(), "GMT-5", "yyyy-MM-dd");
     if (date === today) { return true; }
     return false;
+}
+
+/**
+ * Retrieves the raw text of a document from the document's id
+ *
+ * @param {documentId} documentId the id of the document
+ */
+
+function getDocumentBodyTextById(documentId) {
+    var document = DocumentApp.openById(documentId);
+    return document.getBody().getText();
 }

@@ -19,3 +19,16 @@ function getRequestToApi() {
     var response = UrlFetchApp.fetch(numbersApi).getContentText();
     Logger.log(response);
 }
+
+
+/*
+ * Responds with true if the date is today and false if the date is not today
+ *
+ * @param {date} date to compare to today's date
+ */
+function isDateToday(date) {
+    var date = Utilities.formatDate(date, "GMT-5", "yyyy-MM-dd");
+    var today = Utilities.formatDate (new Date(), "GMT-5", "yyyy-MM-dd");
+    if (date === today) { return true; }
+    return false;
+}

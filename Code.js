@@ -60,3 +60,71 @@ function sendHtmlEmail(subject, recipient, htmlBody, noReply) {
         noReply: noReply
     });
 }
+
+
+/**
+ * Google Apps Script Hangout Chat Bots do not come with default instructions.
+ * Call Messages.helpMessage() anytime somebody types @BotName help to return
+ * this card.
+ */
+var Messages = {
+    helpMessage: function() {
+        return {
+            cards: [{
+                header: {
+                    title: 'Insert BotName here',
+                    subtitle: 'Less than 20 character purpose of bot',
+                    imageUrl: 'https:// link to hosted png image at leaset 128x128',
+                    imageStyle: 'IMAGE'
+                },
+                sections: [
+                    {
+                        widgets: [{
+                            keyValue: {
+                                topLabel: 'Synopsis',
+                                content: '@BotName "command"'
+                            }
+                        }]
+
+                    },
+                    {
+                        header: 'Description',
+                        widgets: [{
+                            textParagraph: {
+                                text: '@BotName provides the following functionality...'
+                            }
+                        }]
+                    },
+                    {
+                        widgets: [{
+                            buttons: [{
+                                textButton: {
+                                    text: 'SEE THE CODE (REPO)',
+                                    onClick: {
+                                        openLink: {
+                                            url: 'https://linktocoderepo.com'
+                                        }
+                                    }
+                                }
+                            }]
+                        }]
+                    },
+                    {
+                        wigets: [{
+                            buttons: [{
+                                textButton: {
+                                    text: 'PROVIDE FEEDBACK',
+                                    onClick: {
+                                        openLink: {
+                                            url: 'https://linktocoderepo.com/issues/new'
+                                        }
+                                    }
+                                }
+                            }]
+                        }]
+                    }
+                ]
+            }]
+        };
+    }
+};
